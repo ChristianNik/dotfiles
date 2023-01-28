@@ -348,8 +348,9 @@ $super+Pause mode $mode_system
 # Set primary monitor
 #
 exec_always --no-startup-id xrandr --output $monitorLeft --auto --left-of $monitorCenter
-exec_always --no-startup-id xrandr --output $monitorCenter --primary
-exec_always --no-startup-id xrandr --output $monitorRight --auto --right-of $monitorCenter --rotate left
+exec_always xrandr --output $monitorCenter --pos 0x0 --rotate normal --output $monitorRight --pos 1920x-400 --rotate left
+# exec_always --no-startup-id xrandr --output $monitorCenter --primary
+# exec_always --no-startup-id xrandr --output $monitorRight --auto --right-of $monitorCenter --rotate left --pos 1920x400
 
 # exec_always xrandr --output $monitorLeft --pos 0x400
 # exec_always xrandr --output $monitorCenter --primary --pos 1920x0
