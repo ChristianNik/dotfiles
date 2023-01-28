@@ -6,13 +6,21 @@
 ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 ```
 
-### Tools
+### System
 
-Windowmanager: i3
-Statusbar: polybar
-terminal: zsh
-promt: powerlevel10k
+| Type          | Name          |
+| ------------- | ------------- |
+| Windowmanager | i3            |
+| Statusbar     | polybar       |
+| Terminal      | zsh           |
+| promt         | powerlevel10k |
 
 ### Software
 
-- Office: PlanMaker
+| Type       | Name        |
+| ---------- | ----------- |
+| Office     | PlanMaker   |
+| MailClient | thunderbird |
+| Chat       | rambox      |
+| Editor     | vscode      |
+| Browser    | firefox     |
