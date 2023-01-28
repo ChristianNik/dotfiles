@@ -5,3 +5,14 @@
 ```bash
 ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 ```
+
+### Tools
+
+Windowmanager: i3
+Statusbar: polybar
+terminal: zsh
+promt: powerlevel10k
+
+### Software
+
+- Office: PlanMaker
