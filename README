@@ -1,0 +1,7 @@
+# Dotfiles
+
+### Link config files
+
+```bash
+ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
+```
