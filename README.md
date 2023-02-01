@@ -24,3 +24,7 @@ ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 | Chat       | rambox      |
 | Editor     | vscode      |
 | Browser    | firefox     |
+
+### Folder structure
+
+See [here](https://github.com/ChristianNik/pc-system)
