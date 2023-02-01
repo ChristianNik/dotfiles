@@ -1,11 +1,11 @@
 i3:
   repo:
     - ~/Dokumente/repos/dotfiles/i3/config
-  folder:
+  path:
     - ~/.config/i3/config
 
 zsh:
   repo:
     - ~/Dokumente/repos/dotfiles/.zshrc
-  folder:
+  path:
     - ~/.zshrc
