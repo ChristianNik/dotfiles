@@ -13,7 +13,7 @@ ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 | Windowmanager | [i3](https://i3wm.org/)            |
 | Statusbar     | [polybar](https://github.com/polybar/polybar)       |
 | Terminal      | zsh           |
-| promt         | powerlevel10k |
+| promt         | [powerlevel10k](https://github.com/romkatv/powerlevel10k) |
 | Nofifications    | dunst     |
 
 ### Software
