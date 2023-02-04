@@ -28,3 +28,12 @@ ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 ### Folder structure
 
 See [here](https://github.com/ChristianNik/pc-system)
+
+### Fonts
+
+#### fonts-font-awesome
+
+```bash
+sudo apt-get update
+sudo apt-get install fonts-font-awesome
+```
