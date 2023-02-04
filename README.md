@@ -15,6 +15,7 @@ ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 | Terminal      | zsh           |
 | promt         | [powerlevel10k](https://github.com/romkatv/powerlevel10k) |
 | Nofifications    | dunst     |
+| Icons | [papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) |
 
 ### Software
 
