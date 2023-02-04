@@ -10,7 +10,7 @@ ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 
 | Type          | Name          |
 | ------------- | ------------- |
-| Windowmanager | i3            |
+| Windowmanager | [id](https://i3wm.org/)            |
 | Statusbar     | polybar       |
 | Terminal      | zsh           |
 | promt         | powerlevel10k |
