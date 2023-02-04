@@ -14,6 +14,7 @@ ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 | Statusbar     | [polybar](https://github.com/polybar/polybar)       |
 | Terminal      | zsh           |
 | promt         | powerlevel10k |
+| Nofifications    | dunst     |
 
 ### Software
 
