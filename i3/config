@@ -1,408 +1,284 @@
-#
-#
-#  Name: BLOKY
-#
-#
+# i3 config file (v2)
 
-#
-#  MODKEY
-#
 set $mod Mod4
-set $super bindsym Mod4
-#
-#  FONT
-#
-font pango:System San Francisco Display 18
-#
-#  I3-GAPS
-#
-for_window [class="^.*"] border pixel 2
-
-workspace_layout tabbed
-# mouse_warping none
-workspace_auto_back_and_forth no
-
-# gaps inner 4
-# gaps outer 8
-#
-#  I3-COLORS
-#
-# Primary
-# #5294E2
-# Primary Variant
-# #5294E2
-# Secondary
-# #E2A052
-# Secondary Variant
-# #E2A052
-# Background
-# #2F343F
-# Surface
-# #50586B
-# Error
-# #E15151
-# On Primary
-# #000000
-# On Secondary
-# #000000
-# On Background
-# #FFFFFF
-# On Surface
-# #FFFFFF
-# On Error
-# #000000
-
-set $focused-bg-color #5192e1
-set $text-color #f3f4f5
-set $inactive-bg-color #21252B
-set $inactive-text-color #676E7Db
-set $urgent-bg-color #E53935
-set $indicator #255174
-set $unfocused-border #333842
-
-#                       border              background          text                    indicator
-client.focused          $indicator          $indicator          $text-color             $focused-bg-color
-client.unfocused        $inactive-bg-color  $unfocused-border   $inactive-text-color    $focused-bg-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color    $focused-bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color             $focused-bg-color
-
-# class                 border  backgr. text    indicator child_border
-# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #900000
-# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-# client.urgent           #2f343a #900000 #ffffff #900000   #900000
-# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
-# client.background       #ffffff
-
-#
-#  KEYBINDINGS
-#
-set $openEmojiMenu mod4+o
-set $openFileExplorer mod4+e
-set $openRun mod4+r
-set $showOpenApplications mod4+Tab
-set $openYoutube mod4+y
-set $openApplication mod4+d
-set $remoteConnectionVigo mod4+n
-
-bindsym $openFileExplorer exec nemo
-bindsym $openRun exec rofi -show run -theme "/usr/share/rofi/themes/my-powermenu" -font "System San Francisco Display 13"
-bindsym $showOpenApplications exec rofi -show window -theme "/usr/share/rofi/themes/my-powermenu" -font "System San Francisco Display 13" -show-icons
-# i3-msg gaps vertical current toggle 100 && i3-msg gaps inner current toggle 16
-bindsym $openYoutube exec ytfzf -Dl
-bindsym $openApplication exec rofi -show drun -theme "/usr/share/rofi/themes/application-menu"
-bindsym $openEmojiMenu exec bash $HOME/.scripts/icon-menu/icon-menu.sh
-bindsym $remoteConnectionVigo exec rdesktop-vrdp 192.168.178.25 -u medimix -g 1024x600 -K
-$super+Return exec i3-sensible-terminal
-
-# Center Window
-bindsym $mod+c move container position center
+# Monitor
+set $MONITOR_LEFT "HDMI-0"
+set $MONITOR_RIGHT "HDMI-1"
 
 
-## Session
-$super+l exec ~/.scripts/lockscreen/lock_and_blur.sh
-$super+Shift+c reload
-$super+Shift+r restart
-$super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# nautilus, nemo
+set $FILE_BROWSER "nemo" 
 
-## Applications
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 14
+# font pango:Source Sans Pro 10
 
-$super+mod1+f exec "firefox"
-bindsym Ctrl+mod1+p exec mate-color-select
-#
-#  KEYBINDINGS_WINDOW
-#
-$super+Left focus left
-$super+Down focus down
-$super+Up focus up
-$super+Right focus right
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
 
-$super+Shift+Left move left
-$super+Shift+Down move down
-$super+Shift+Up move up
-$super+Shift+Right move right
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
 
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
+# A more modern dmenu replacement is rofi:
+# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle global
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+p layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+bindsym $mod+c move position center
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Set Monitor Layout
+# exec xrandr --output HDMI-1 --left-of HDMI-2 --auto
+
+# Set background Image
+exec --no-startup-id nitrogen --restore
+
+focus_follows_mouse no
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+# 'cascadia code', 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', 'inconsolata for powerline','DroidSansMono Nerd Font', 'monospace'
+set $ws1 "1:  Chrome "
+set $ws2 "2:  Code "
+set $ws3 "3:  Debug"
+set $ws4 "4:  Terminal "
+set $ws5 "5:  Files"
+set $ws6 "6:  Comunication"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9:  Data"
+set $ws10 ""
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# switch to workspace with num pad
+bindsym $mod+mod2+KP_1 workspace $ws1
+bindsym $mod+mod2+KP_2 workspace $ws2
+bindsym $mod+mod2+KP_3 workspace $ws3
+bindsym $mod+mod2+KP_4 workspace $ws4
+bindsym $mod+mod2+KP_5 workspace $ws5
+bindsym $mod+mod2+KP_6 workspace $ws6
+bindsym $mod+mod2+KP_7 workspace $ws7
+bindsym $mod+mod2+KP_8 workspace $ws8
+bindsym $mod+mod2+KP_9 workspace $ws9
+bindsym $mod+mod2+KP_0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# move focused container to workspace with node pad
+bindsym $mod+Shift+Mod2+KP_End move container to workspace $ws1
+bindsym $mod+Shift+Mod2+KP_Down move container to workspace $ws2
+bindsym $mod+Shift+Mod2+KP_Next move container to workspace $ws3
+bindsym $mod+Shift+Mod2+KP_Left move container to workspace $ws4
+bindsym $mod+Shift+Mod2+KP_Begin move container to workspace $ws5
+bindsym $mod+Shift+Mod2+KP_Right move container to workspace $ws6
+bindsym $mod+Shift+Mod2+KP_Home move container to workspace $ws7
+bindsym $mod+Shift+Mod2+KP_Up move container to workspace $ws8
+bindsym $mod+Shift+Mod2+KP_Prior move container to workspace $ws9
+bindsym $mod+Shift+Mod2+KP_Insert move container to workspace $ws10
+
+
+# Move Workspace
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
 bindsym $mod+mod1+Left resize shrink width 10 px or 10 ppt
 bindsym $mod+mod1+Down resize grow height 10 px or 10 ppt
 bindsym $mod+mod1+Up resize shrink height 10 px or 10 ppt
 bindsym $mod+mod1+Right resize grow width 10 px or 10 ppt
 
-bindsym Shift+$mod+p focus parent
-
-$super+h split h
-$super+v split v
-$super+f fullscreen toggle
-
-# kill focused window
-$super+Delete kill
-# bindsym mod1+F4 kill
-bindsym $mod+Shift+q kill
-#
-#  KEYBINDINGS_LAYOUT
-#
-$super+s layout stacking
-$super+t layout tabbed
-$super+p layout toggle split
-$super+Shift+space floating toggle
-$super+space focus mode_toggle
-
-show_marks yes
-# read 1 character and mark the current window with this character
-bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
-
-# read 1 character and go to the window with the character
-bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
-bindsym $mod+mod1+g exec i3-msg gaps inner current toggle 16
-
-#
-#  KEYBINDINGS_WORKPACES
-#
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
-# switch to workspace
-$super+1 workspace $ws1
-$super+2 workspace $ws2
-$super+3 workspace $ws3
-$super+4 workspace $ws4
-$super+5 workspace $ws5
-$super+6 workspace $ws6
-$super+7 workspace $ws7
-$super+8 workspace $ws8
-$super+9 workspace $ws9
-$super+0 workspace $ws10
-
-# switch to workspace via numpad
-$super+mod2+KP_1 workspace $ws1
-$super+mod2+KP_2 workspace $ws2
-$super+mod2+KP_3 workspace $ws3
-$super+mod2+KP_4 workspace $ws4
-$super+mod2+KP_5 workspace $ws5
-$super+mod2+KP_6 workspace $ws6
-$super+mod2+KP_7 workspace $ws7
-$super+mod2+KP_8 workspace $ws8
-$super+mod2+KP_9 workspace $ws9
-$super+mod2+KP_0 workspace $ws10
-
-# Cycle through active workspaces !NO
-# $super+space+Left workspace prev
-# $super+space+Right workspace next
-
-# move focused workspace to output
-$super+Control+Left move workspace to output left
-$super+Control+KP_2 move workspace to output primary
-$super+Control+Right move workspace to output right
-
-# move focused container to workspace
-$super+Shift+1 move container to workspace $ws1
-$super+Shift+2 move container to workspace $ws2
-$super+Shift+3 move container to workspace $ws3
-$super+Shift+4 move container to workspace $ws4
-$super+Shift+5 move container to workspace $ws5
-$super+Shift+6 move container to workspace $ws6
-$super+Shift+7 move container to workspace $ws7
-$super+Shift+8 move container to workspace $ws8
-$super+Shift+9 move container to workspace $ws9
-$super+Shift+0 move container to workspace $ws10
-
-# move focused container to workspace via numpad
-$super+Shift+Mod2+KP_End move container to workspace $ws1
-$super+Shift+Mod2+KP_Down move container to workspace $ws2
-$super+Shift+Mod2+KP_Next move container to workspace $ws3
-$super+Shift+Mod2+KP_Left move container to workspace $ws4
-$super+Shift+Mod2+KP_Begin move container to workspace $ws5
-$super+Shift+Mod2+KP_Right move container to workspace $ws6
-$super+Shift+Mod2+KP_Home move container to workspace $ws7
-$super+Shift+Mod2+KP_Up move container to workspace $ws8
-$super+Shift+Mod2+KP_Prior move container to workspace $ws9
-$super+Shift+Mod2+KP_Insert move container to workspace $ws10
-
-#
-#  MEDIA-HOTKEYS
-#
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
-
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-#
-#  WORKSPACES
-#
-# @docs Save workspace: i3-save-tree --workspace 6 > ~/.i3/workspace-6.json
-# @docs Load workspace:  i3-msg 'workspace 6; append_layout ~/.i3/workspace-6.json'
-
-# exec "i3-msg 'workspace 6; append_layout ~/.i3/workspace-6-mailspring.json'"
-exec "i3-msg 'workspace 6; append_layout ~/.i3/workspace-6-thunderbird.json'"
-
-#
-#  WORKSPACES
-#
-assign [class="Skype"] $ws1
-assign [class="Code"] $ws2
-# assign [class="Firefox"] $ws1
-assign [class="Navigator"] $ws1
-assign [class="Vivaldi"] $ws3
-assign [class="deja-dup"] $ws10
-assign [class="Steam"] $ws9
-assign [class="realvnc-vncviewer"] $ws8
-assign [class="virt-manager"] $ws8
-assign [class="deja-dup"] $ws10
-
-set $monitorLeft HDMI-0
-set $monitorCenter HDMI-0
-set $monitorRight HDMI-1
-
-workspace $ws1 output $monitorLeft
-workspace $ws4 output $monitorLeft
-workspace $ws7 output $monitorLeft
-workspace $ws2 output $monitorCenter
-workspace $ws5 output $monitorCenter
-workspace $ws8 output $monitorCenter
-workspace $ws3 output $monitorRight
-workspace $ws6 output $monitorRight
-workspace $ws9 output $monitorCenter
-#
-#  CODE_SUDO_FIX
-#
-exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-#
-#  AUTOSTART
-#
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
-# Software
-exec --no-startup-id deja-dup --backup
-exec --no-startup-id compton -f
-#
-#  POLYBAR
-#
-exec_always --no-startup-id ~/.config/polybar/launch.sh "/home/christian/.themes/i3/Bloky/.config/polybar/config" example example-left
 
 
+mode "resize" {
+        bindsym Left  resize shrink width  10 px or 10 ppt
+        bindsym Down  resize grow   height 10 px or 10 ppt
+        bindsym Up    resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow   width  10 px or 10 ppt
 
-#
-#  SCRATCHPAD
-#
-# Make the currently focused window a scratchpad
-$super+Shift+minus move scratchpad
+        bindsym Shift+Left  resize shrink width  100 px or 100 ppt
+        bindsym Shift+Down  resize grow   height 100 px or 100 ppt
+        bindsym Shift+Up    resize shrink height 100 px or 100 ppt
+        bindsym Shift+Right resize grow   width  100 px or 100 ppt
 
-# Show the first scratchpad window
-$super+minus scratchpad show
-#
-#  WINDOW_RULES
-#
-for_window [class="scrcpy"]                 floating enable
-for_window [class="Nm-connection-editor"]   floating enable
-for_window [class="Gnome-calendar"]         floating enable
-for_window [class="MintUpdate.py"]          floating enable
-# playwright
-for_window [class="Code-url-handler"]       floating enable
-for_window [class="MiniBrowser"]            floating enable
-for_window [class="Nightly"]                floating enable
-#
-#  FLOATING_WINDOWS
-#
-floating_modifier $mod
-#
-#  MOUSE_FOCUS
-#
-focus_follows_mouse no
-#
-#  PHONE_CONNECT_WIRELESS
-#
-exec --no-startup-id /snap/bin/scrcpy
-#
-#  SYSTEM_POWER_MODE
-#
-set $mode_system "System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown "
-mode $mode_system {
-bindsym l exec --no-startup-id i3exit lock, mode "default"
-bindsym e exec --no-startup-id i3exit logout, mode "default"
-bindsym s exec --no-startup-id systemctl suspend
-bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-bindsym r exec --no-startup-id i3exit reboot, mode "default"
-bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-# back to normal: Enter or Escape
-bindsym Return mode "default"
-bindsym Escape mode "default"
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
 }
-$super+Pause mode $mode_system
-#
-# Set primary monitor
-#
-exec_always --no-startup-id xrandr --output $monitorLeft --auto --left-of $monitorCenter
-exec_always xrandr --output $monitorCenter --pos 0x0 --rotate normal --output $monitorRight --pos 1920x-400 --rotate left
-# exec_always --no-startup-id xrandr --output $monitorCenter --primary
-# exec_always --no-startup-id xrandr --output $monitorRight --auto --right-of $monitorCenter --rotate left --pos 1920x400
 
-# exec_always xrandr --output $monitorLeft --pos 0x400
-# exec_always xrandr --output $monitorCenter --primary --pos 1920x0
-# exec_always xrandr --output $monitorRight --rotate left --pos 3840x0
+bindsym $mod+r mode "resize"
 
-# HDMI-1 1080x1920+3840+0
 
-#
-#  BACKGROUND_IMAGE
-#
-# exec_always --no-startup-id feh --bg-tile ~/Bilder/Wallpaper/image828.png
+# Create Log out, Reboot, Poweroff bindingsR
+set $powerMode "Exit [$mod] + [p] Poweroff, [l] Logout, [r] Reboot"
+mode $powerMode {
+        bindsym $mod+r exec systemctl reboot
+        bindsym $mod+l exit
+        bindsym $mod+p exec systemctl poweroff
 
-# exec_always --no-startup-id feh --bg-tile ~/Bilder/Wallpaper/image940.png
-# exec_always --no-startup-id SPLAY=:0.0 feh --bg-scale ~/Bilder/Wallpaper/image940.png
-# exec_always --no-startup-id SPLAY=:0.1 feh --bg-scale ~/Bilder/Wallpaper/image828.png
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
+bindsym $mod+Shift+e mode $powerMode
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        # status_command i3blocks
+        position bottom
+        font pango:DejaVu Sans Mono 12
+}
+
+
+# Window rules
+for_window [class="^.*"] border pixel 2
+for_window [class=".*"] move position center
+for_window [title="Dunst"] floating enable
+
+
+# Workspace Monitor
+workspace $ws1 output $MONITOR_LEFT
+workspace $ws4 output $MONITOR_LEFT
+workspace $ws7 output $MONITOR_LEFT
+
+workspace $ws2 output $MONITOR_LEFT
+workspace $ws5 output $MONITOR_LEFT
+workspace $ws8 output $MONITOR_LEFT
+
+workspace $ws3 output $MONITOR_RIGHT
+workspace $ws6 output $MONITOR_RIGHT
+workspace $ws9 output $MONITOR_RIGHT
+
+
+# Monitor Output
+exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal  --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
+
+# Restore Background
 exec --no-startup-id nitrogen --restore
 
-# xrandr --autoxrandr --output HDMI-2 --rotate left --pos 3840x0
 
-#
-# Software
-#
+# Lock Screen
+bindsym $mod+l exec "~/.i3/lock_and_blur.sh"
 
-# Mailspring
-assign [class="Mailspring"] $ws6
-for_window [class="Mailspring"] border pixel 0
-# exec --no-startup-id exec mailspring
+
+# File Manager
+bindsym $mod+e exec $FILE_BROWSER
+
+# KeePassXC
+assign [class="KeePassXC"] $ws9
+for_window [title="KeePassXC"] floating enable
+exec --no-startup-id keepassxc
+
+# VsCode
+assign [class="Code"] $ws2
 
 # Thunderbird
 assign [class="thunderbird"] $ws6
-for_window [class="thunderbird"] border pixel 0
-exec --no-startup-id exec thunderbird
+exec --no-startup-id thunderbird
 
-# Rambox
-assign [class="rambox"] $ws6
-exec --no-startup-id exec rambox 
+# # Shutter
+# bindsym Print exec shutter
+# for_window [title="Shutter"] floating enable
 
-# Keepass
-assign [class="keepass*"] $ws10
-for_window [class="keepass*"] floating enable
-# for_window [class="keepass*"] move container to workspace $ws10
-for_window [class="keepass*"] resize set 940 580
-for_window [class="keepass*"] move position center  
-bindsym mod4+k exec --no-startup-id keepassxc
-
-# Shutter 
-for_window [class="Shutter"] floating enable
-for_window [class="Shutter"] resize set 840 480
-for_window [class="Shutter"] move position center 
-bindsym Print exec shutter --select
-# bindsym shift+Print exec shutter --select
-
-# Flameshot 
+# Flameshot
 bindsym shift+Print exec flameshot gui

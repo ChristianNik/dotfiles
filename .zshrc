@@ -5,22 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# export PATH="$HOME/platform-tools:$PATH"
-# /usr/lib/android-sdk
 
-export PATH="/usr/lib/android-sdk/platform-tools:$PATH"
-
-# export PATH="/home/christian/Android/Sdk/platform-tools:$PATH"
-# export PATH="/home/christian/Android/Sdk/tools:$PATH"
-
-alias fastbootdevices='$HOME/platform-tools/fastboot fastboot devices'
+alias ll='ls -alF'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
