@@ -32,8 +32,9 @@ See [here](https://github.com/ChristianNik/pc-system)
 ### Fonts
 
 #### fonts-font-awesome
+### Software
 
-```bash
-sudo apt-get update
-sudo apt-get install fonts-font-awesome
-```
+| Name       | URL        |
+| ---------- | ----------- |
+| fonts-font-awesome     | -   |
+| Nerd Fonts | https://github.com/ryanoasis/nerd-fonts|
