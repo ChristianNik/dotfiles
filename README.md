@@ -31,9 +31,6 @@ See [here](https://github.com/ChristianNik/pc-system)
 
 ### Fonts
 
-#### fonts-font-awesome
-### Software
-
 | Name       | URL        |
 | ---------- | ----------- |
 | fonts-font-awesome     | -   |
