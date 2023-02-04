@@ -36,3 +36,21 @@ See [here](https://github.com/ChristianNik/pc-system)
 | ---------- | ----------- |
 | fonts-font-awesome     | -   |
 | Nerd Fonts | https://github.com/ryanoasis/nerd-fonts|
+
+
+```bash
+sudo apt update -y
+sudo apt upgrade -y
+
+sudo apt install i3 -y
+sudo apt install nitrogen -y
+sudo apt install zsh -y
+sudo apt install git -y
+sudo apt install vim -y
+sudo apt install flameshot -y
+sudo apt-get install fonts-font-awesome -y
+
+# lockscreen
+sudo apt install scrot -y
+sudo apt-get install imagemagick imagemagick-doc -y
+```
