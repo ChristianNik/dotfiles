@@ -256,6 +256,10 @@ exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal  --output $M
 # Restore Background
 exec --no-startup-id nitrogen --restore
 
+smart_gaps on
+
+# Inner gaps for all windows: space between two adjacent windows (or split containers).
+gaps inner 8px
 
 # Lock Screen
 bindsym $mod+l exec "~/.i3/lock_and_blur.sh"
