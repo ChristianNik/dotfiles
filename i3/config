@@ -280,3 +280,7 @@ exec --no-startup-id thunderbird
 
 # Flameshot
 bindsym shift+Print exec flameshot gui
+
+# Ferdium
+assign [class="Ferdium"] $ws6
+exec --no-startup-id exec ferdium 
