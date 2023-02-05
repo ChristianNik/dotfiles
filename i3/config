@@ -110,16 +110,16 @@ focus_follows_mouse no
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 # 'cascadia code', 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', 'inconsolata for powerline','DroidSansMono Nerd Font', 'monospace'
-set $ws1 "1:  Chrome "
-set $ws2 "2:  Code "
-set $ws3 "3:  Debug"
-set $ws4 "4:  Terminal "
-set $ws5 "5:  Files"
-set $ws6 "6:  Comunication"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9:  Data"
-set $ws10 ""
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

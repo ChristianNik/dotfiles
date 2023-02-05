@@ -55,3 +55,12 @@ sudo apt-get install fonts-font-awesome -y
 sudo apt install scrot -y
 sudo apt-get install imagemagick imagemagick-doc -y
 ```
+
+## Polybar
+
+Char overflow
+
+```bash
+echo -e '\ue0b8\uF22F'
+$ 
+```
