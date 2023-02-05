@@ -1,5 +1,8 @@
 # Dotfiles
 
+![christians dotfiles](https://user-images.githubusercontent.com/40700226/216846292-cb4be0af-5f3d-458f-868e-a82fc9cbc626.png)
+
+
 ### Link config files
 
 ```bash
