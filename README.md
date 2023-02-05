@@ -20,7 +20,7 @@
 | ---------- | ----------- |
 | Office     | PlanMaker   |
 | MailClient | thunderbird |
-| Chat       | rambox      |
+| Chat       | ~~rambox~~ [ferdium](https://ferdium.org/download)      |
 | Editor     | vscode      |
 | Browser    | firefox     |
 
