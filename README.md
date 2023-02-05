@@ -2,11 +2,6 @@
 
 ![christians dotfiles](https://user-images.githubusercontent.com/40700226/216846332-8665a8a4-bbb9-4aef-b578-a5c8cff7a5b1.png)
 
-### Link config files
-
-```bash
-ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
-```
 
 ### System
 
@@ -31,7 +26,9 @@ ln -s ~/Dokumente/repos/dotfiles/i3/config ~/.config/i3/config
 
 ### Folder structure
 
-See [here](https://github.com/ChristianNik/pc-system)
+| Name         | Path       |
+| ------------ | ---------- |
+| Repositories | ~/repos/\* |
 
 ### Fonts
 
