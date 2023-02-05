@@ -1,7 +1,6 @@
 # Dotfiles
 
-![christians dotfiles](https://user-images.githubusercontent.com/40700226/216846292-cb4be0af-5f3d-458f-868e-a82fc9cbc626.png)
-
+![christians dotfiles](https://user-images.githubusercontent.com/40700226/216846332-8665a8a4-bbb9-4aef-b578-a5c8cff7a5b1.png)
 
 ### Link config files
 
