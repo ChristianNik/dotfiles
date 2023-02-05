@@ -263,7 +263,7 @@ bindsym $mod+l exec "~/.i3/lock_and_blur.sh"
 bindsym $mod+e exec $FILE_BROWSER
 
 # KeePassXC
-assign [class="KeePassXC"] $ws9
+assign [class="KeePassXC"] $ws10
 for_window [title="KeePassXC"] floating enable
 exec --no-startup-id keepassxc
 
