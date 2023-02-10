@@ -1,6 +1,9 @@
 # Dotfiles
 
+<!--
 ![christians dotfiles](https://user-images.githubusercontent.com/40700226/216846332-8665a8a4-bbb9-4aef-b578-a5c8cff7a5b1.png)
+-->
+![christians dotfiles](https://user-images.githubusercontent.com/40700226/218064443-77c3eb08-90a8-48e2-8964-0d035964a7fd.png)
 
 
 ### System
