@@ -283,3 +283,7 @@ bindsym shift+Print exec flameshot gui
 # Ferdium
 assign [class="Ferdium"] $ws6
 exec --no-startup-id exec ferdium 
+
+# Steam
+assign [class="Steam"] $ws8
+# exec --no-startup-id exec steam 
