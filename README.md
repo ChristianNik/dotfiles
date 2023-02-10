@@ -35,10 +35,11 @@
 
 ### Fonts
 
-| Name               | URL                                     |
-| ------------------ | --------------------------------------- |
-| fonts-font-awesome | -                                       |
-| Nerd Fonts         | https://github.com/ryanoasis/nerd-fonts |
+| Name                     | URL                                     |
+| ------------------------ | --------------------------------------- |
+| fonts-font-awesome       | -                                       |
+| Nerd Fonts               | https://github.com/ryanoasis/nerd-fonts |
+| Nerd Fonts (cheat-sheet) | https://www.nerdfonts.com/cheat-sheet   |
 
 ```bash
 sudo apt update -y
