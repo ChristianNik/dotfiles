@@ -257,6 +257,8 @@ gaps inner 8px
 # Lock Screen
 bindsym $mod+l exec "~/.i3/lock_and_blur.sh"
 
+# Restore Background
+exec --no-startup-id nitrogen --restore
 
 # File Manager
 bindsym $mod+e exec $FILE_BROWSER
