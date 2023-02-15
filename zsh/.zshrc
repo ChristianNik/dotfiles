@@ -1,4 +1,13 @@
+source_if_exists () {
+    if test -r "$1"; then
+        source "$1"
+    fi
+}
 
+# source_if_exists $DOTFILES/zsh/aliases.zsh
+# source_if_exists $DOTFILES/zsh/history.zsh
+# source_if_exists $DOTFILES/zsh/p10k.zsh
+source_if_exists $HOME/.env.sh
 
 # POWER-LEVEL-10K -------------------------------------------------------------------------------------------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.

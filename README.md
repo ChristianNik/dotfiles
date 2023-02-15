@@ -6,6 +6,8 @@
 
 ![christians dotfiles](https://user-images.githubusercontent.com/40700226/218064443-77c3eb08-90a8-48e2-8964-0d035964a7fd.png)
 
+[Inspiration](https://shaky.sh/simple-dotfiles/)
+
 ### System
 
 | Type          | Name                                                                    |
