@@ -43,6 +43,13 @@
 | Nerd Fonts               | https://github.com/ryanoasis/nerd-fonts |
 | Nerd Fonts (cheat-sheet) | https://www.nerdfonts.com/cheat-sheet   |
 
+### Default shell
+
+```bash
+chsh
+> /bin/zsh
+```
+
 ```bash
 sudo apt update -y
 sudo apt upgrade -y
@@ -54,6 +61,7 @@ sudo apt install git -y
 sudo apt install vim -y
 sudo apt install flameshot -y
 sudo apt-get install fonts-font-awesome -y
+sudo apt-get install exa -y
 
 # lockscreen
 sudo apt install scrot -y
