@@ -57,6 +57,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+exec --no-startup-id "compton -b"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -284,3 +285,7 @@ exec --no-startup-id exec ferdium
 # Steam
 assign [class="Steam"] $ws8
 # exec --no-startup-id exec steam 
+
+# gpick
+for_window [title="gpick"] floating enable
+bindsym ctrl+mod1+p exec gpick
