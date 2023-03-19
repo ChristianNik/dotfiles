@@ -76,3 +76,41 @@ Char overflow
 echo -e '\ue0b8\uF22F'
 $ 
 ```
+
+### Mount SMB
+
+#### CIFS installation
+
+`sudo apt-get install cifs-utils`
+
+
+Mount password protected network folders
+
+Using a text editor, create a file for your remote servers logon credential:
+
+gedit ~/.smbcredentials
+
+Enter your Windows username and password in the file:
+
+```text
+username=msusername
+password=mspassword
+```
+
+Save the file, exit the editor.
+
+Change the permissions of the file to prevent unwanted access to your credentials:
+
+`chmod 600 ~/.smbcredentials`
+
+Then edit your /etc/fstab file (with root privileges) to add this line (replacing the insecure line in the example above, if you added it):
+
+//servername/sharename /media/windowsshare cifs credentials=/home/ubuntuusername/.smbcredentials,iocharset=utf8 0 0 
+
+Save the file, exit the editor.
+
+Finally, test the fstab entry by issuing:
+
+sudo mount -a
+
+If there are no errors, you should test how it works after a reboot. Your remote share should mount automatically. 
