@@ -66,6 +66,9 @@ sudo apt-get install exa -y
 # lockscreen
 sudo apt install scrot -y
 sudo apt-get install imagemagick imagemagick-doc -y
+
+# sound
+sudo apt install playerctl -y
 ```
 
 ## Polybar
