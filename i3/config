@@ -242,7 +242,8 @@ workspace $ws9 output $MONITOR_RIGHT
 
 
 # Monitor Output
-exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal  --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
+exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal 
+exec_always xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
 
 # Restore Background
 exec --no-startup-id nitrogen --restore
