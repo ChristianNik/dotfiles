@@ -241,9 +241,7 @@ workspace $ws6 output $MONITOR_RIGHT
 workspace $ws9 output $MONITOR_RIGHT
 
 
-# Monitor Output
-exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal 
-exec_always xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
+
 
 # Restore Background
 exec --no-startup-id nitrogen --restore
@@ -290,3 +288,7 @@ assign [class="Steam"] $ws8
 # gpick
 for_window [title="gpick"] floating enable
 bindsym ctrl+mod1+p exec gpick
+
+# Monitor Output
+exec xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal 
+exec xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
