@@ -282,7 +282,7 @@ assign [class="Ferdium"] $ws6
 exec --no-startup-id exec ferdium 
 
 # Steam
-assign [class="Steam"] $ws8
+assign [class="Steam"] $ws9
 # exec --no-startup-id exec steam 
 
 # gpick
@@ -290,5 +290,5 @@ for_window [title="gpick"] floating enable
 bindsym ctrl+mod1+p exec gpick
 
 # Monitor Output
-exec xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal 
-exec xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
+exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal 
+exec_always xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
