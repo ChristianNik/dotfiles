@@ -5,18 +5,18 @@ set $mod Mod4
 set $MONITOR_LEFT "HDMI-0"
 set $MONITOR_RIGHT "HDMI-1"
 
-
-# nautilus, nemo
-set $FILE_BROWSER "nemo" 
+set $FILE_BROWSER "nemo" # nautilus, nemo
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 14
-# font pango:Source Sans Pro 10
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# Monitor Output
+exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal 
+exec_always xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
+
+# Restore Background
+exec --no-startup-id nitrogen --restore
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -32,6 +32,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+exec --no-startup-id picom
+
+# Bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
@@ -56,8 +61,6 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-
-exec --no-startup-id picom
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -218,8 +221,7 @@ mode $powerMode {
 
 bindsym $mod+Shift+e mode $powerMode
 
-# Bar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 
 # Window rules
 for_window [class="^.*"] border pixel 0
@@ -243,11 +245,9 @@ workspace $ws9 output $MONITOR_RIGHT
 
 
 
-# Restore Background
-exec --no-startup-id nitrogen --restore
+
 
 smart_gaps on
-
 # Inner gaps for all windows: space between two adjacent windows (or split containers).
 gaps inner 8px
 
@@ -289,6 +289,4 @@ assign [class="Steam"] $ws9
 for_window [title="gpick"] floating enable
 bindsym ctrl+mod1+p exec gpick
 
-# Monitor Output
-exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal 
-exec_always xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
+
