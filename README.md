@@ -23,7 +23,7 @@
 
 | Type       | Name                                               |
 | ---------- | -------------------------------------------------- |
-| Office     | PlanMaker                                          |
+| Office     | PlanMaker/freeoffice                               |
 | MailClient | thunderbird                                        |
 | Chat       | ~~rambox~~ [ferdium](https://ferdium.org/download) |
 | Editor     | vscode                                             |
