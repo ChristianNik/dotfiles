@@ -69,6 +69,7 @@ listview {
   fixed-columns: true;
   flow: horizontal;
   padding: 16px 16px 48px;
+  background-image: url("/home/christian/.rofi/launcher-bg.png");
 }
 
 box {
