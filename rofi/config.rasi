@@ -1,6 +1,7 @@
 configuration {
-  modes: [ combi];
-  combi-modes: [ window, drun, run];
+  modes: [combi];
+  combi-modes: [drun];
+  display-drun: "Anwendungen";
 }
 
 * {
@@ -13,7 +14,7 @@ window {
   background-color: @bg;
   // location: south;
   // anchor: south;
-  height: 50%;
+  max-height: 50%;
   width: 600px;
   y-offset: -38px;
 }
@@ -29,7 +30,6 @@ inputbar {
 
 prompt {
   text-color: @text;
-  content: "dwa";
 }
 
 entry {
@@ -41,6 +41,7 @@ entry {
 listview {
   columns: 1;
   spacing: 8px;
+  lines: 8;
   scrollbar: false;
 }
 
@@ -63,21 +64,22 @@ element-text {
 }
 
 element normal.normal {
-  background-color: #424242;
+  background-color: transparent;
 }
 
 element normal.active {
-  background-color: #424242;
+  background-color: transparent;
 }
 
 element selected.normal {
   background-color: @primary;
+  border-radius: 4px;
 }
 
 element selected.active {
-  background-color: #424242;
+  background-color: transparent;
 }
 
 element alternate.normal {
-  background-color: #424242;
+  background-color: transparent;
 }
