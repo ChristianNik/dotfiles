@@ -1,0 +1,59 @@
+* {
+  // border: 1;
+  // border-color: red;
+}
+
+window {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+mainbox {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+inputbar {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+prompt {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+textbox-prompt-colon {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+entry {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+listview {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+box {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+element {
+   background-color: inherit;
+  text-color: inherit;
+}
+
+element-icon {
+    background-color: inherit;
+  text-color: inherit;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+}

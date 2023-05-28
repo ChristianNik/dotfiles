@@ -4,19 +4,23 @@ configuration {
   display-drun: "Anwendungen";
 }
 
+@theme "reset"
+
 * {
+  bg-gray-900: #121212;
   bg: #222222;
   text: #dfdfdf;
   primary: #4aa1e8;
 }
 
 window {
-  background-color: @bg;
-  // location: south;
-  // anchor: south;
-  max-height: 50%;
-  width: 600px;
+  location: south;
+  anchor: south;
+  width: 700px;
   y-offset: -38px;
+  background-color: @bg;
+  border-color: @bg;
+  padding: 0 0 48px;
 }
 
 mainbox {
@@ -24,43 +28,71 @@ mainbox {
 }
 
 inputbar {
+  margin: 16px 16px 0 16px;
   padding: 8px;
+  border-radius: 4px;
   text-color: @text;
+  children: [ textbox-prompt-colon, entry ];
+  background-color: #424242;
+  border: 0 0 2px;
+  border-color: @primary;
 }
 
 prompt {
   text-color: @text;
-}
-
-entry {
-  placeholder: "...";
-  cursor: text;
-  text-color: @text;
-}
-
-listview {
-  columns: 1;
-  spacing: 8px;
-  lines: 8;
-  scrollbar: false;
-}
-
-element {
-  orientation: horizontal;
-  children: [ element-icon, element-text];
-  spacing: 16px;
+  background-color: #424242;
+  border-radius: 4px;
   padding: 8px;
 }
 
+textbox-prompt-colon {
+  expand: false;
+  str: "";
+  padding: 0 4px;
+  vertical-align: 0.5;
+  margin: 0 8px 0 0;
+  font: "Hack Nerd Font 21px";
+}
+
+entry {
+  placeholder: "Suche";
+  cursor: text;
+  text-color: @text;
+  vertical-align: 0.5;
+}
+
+listview {
+  width: 700px;
+  columns: 6;
+  spacing: 8px;
+  lines:  6;
+  scrollbar: false;
+  fixed-columns: true;
+  flow: horizontal;
+  padding: 16px;
+}
+
+box {
+  orientation: horizontal;
+}
+
+element {
+  orientation: vertical;
+  children: [ element-icon, element-text];
+  spacing: 8px;
+  padding: 12px;
+}
+
 element-icon {
-  size: 2.5em;
+  size: 2em;
 }
 
 element-text {
   vertical-align: 0.5;
   text-color: @text;
-  highlight: bold #bd2c40;
-
+  highlight: bold #4aa1e8;
+  font: "Sans Regular 12px";
+  horizontal-align: 0.5;
 }
 
 element normal.normal {
@@ -72,7 +104,7 @@ element normal.active {
 }
 
 element selected.normal {
-  background-color: @primary;
+  background-color: @bg-gray-900;
   border-radius: 4px;
 }
 
