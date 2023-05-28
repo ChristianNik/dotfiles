@@ -1,39 +1,82 @@
 configuration {
-  modes: [ combi ];
-  combi-modes: [ window, drun, run ];
+  modes: [ combi];
+  combi-modes: [ window, drun, run];
 }
 
-@theme "default"
+* {
+  bg: #222222;
+  text: #dfdfdf;
+  primary: #4aa1e8;
+}
 
-entry {
-    placeholder: "Type here";
+window {
+  background-color: @bg;
+  location: south;
+  anchor: south;
+  // height: 50%;
+}
+
+mainbox {
+  background-color: hsl(0, 0%, 20%);
+}
+
+inputbar {
+  padding: 8px;
+  text-color: @text;
+}
+
+prompt {
+  text-color: @text;
+  content: "dwa";
 }
 
 entry {
-    placeholder: "Type here";
-    cursor: pointer;
+  placeholder: "...";
+  cursor: text;
+  text-color: @text;
+}
+
+listview {
+  columns: 4;
+  lines: 4;
+  spacing: 8px;
 }
 
 element {
-  orientation: horizontal;
-  children: [ element-icon, element-text ];
-  spacing: 5px;
+  orientation: vertical;
+  children: [ element-icon, element-text];
+  spacing: 16px;
+  padding: 8px;
 }
 
 element-icon {
-    size: 2.5em;
+  size: 2.5em;
 }
-
-// entry, element-text {
-//   text-color: red;
-//   background-color: rgb(0,0,255);
-// }
 
 element-text {
-    vertical-align: 0.5;
+  vertical-align: 0.5;
+  text-color: @text;
+  highlight: bold #bd2c40;
+
 }
 
-entry {
-  cursor-color: rgb(220,20,60);
-  cursor-width: 8px;
+
+element normal.normal {
+  background-color: #424242;
+}
+
+element normal.active {
+  background-color: #424242;
+}
+
+element selected.normal {
+  background-color: @primary;
+}
+
+element selected.active {
+  background-color: #424242;
+}
+
+element alternate.normal {
+  background-color: #424242;
 }
