@@ -223,8 +223,6 @@ bindsym $mod+Shift+e mode $powerMode
 # Window rules
 for_window [class="^.*"] border pixel 0
 for_window [class=".*"] move position center
-for_window [title="Dunst"] floating enable
-
 
 # Workspace Monitor
 workspace $ws1 output $MONITOR_LEFT
