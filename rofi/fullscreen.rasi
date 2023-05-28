@@ -11,15 +11,16 @@ configuration {
 
 window {
   background-color: @bg;
-  // location: south;
-  // anchor: south;
-  height: 50%;
-  width: 600px;
-  y-offset: -38px;
+  location: south;
+  anchor: south;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(0, 0%, 13%, 0.5);
+  padding: 20% 30%;
 }
 
 mainbox {
-  background-color: inherit;
+  background-color: transparent;
 }
 
 inputbar {
@@ -41,7 +42,6 @@ entry {
 listview {
   columns: 1;
   spacing: 8px;
-  scrollbar: false;
 }
 
 element {
@@ -62,12 +62,16 @@ element-text {
 
 }
 
+
 element normal.normal {
-  background-color: #424242;
+  background-color: transparent;
+  background-color: hsla(0, 0%, 20%, 1);
+
 }
 
 element normal.active {
-  background-color: #424242;
+  background-color: transparent;
+  background-color: hsla(0, 0%, 20%, 1);
 }
 
 element selected.normal {
@@ -75,9 +79,13 @@ element selected.normal {
 }
 
 element selected.active {
-  background-color: #424242;
+  background-color: transparent;
+  background-color: hsla(0, 0%, 20%, 1);
+
 }
 
 element alternate.normal {
-  background-color: #424242;
+  background-color: transparent;
+  background-color: hsla(0, 0%, 20%, 1);
+
 }
