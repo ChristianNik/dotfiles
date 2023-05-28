@@ -57,3 +57,13 @@ element-text {
   background-color: inherit;
   text-color: inherit;
 }
+
+error-message {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+textbox {
+  background-color: inherit;
+  text-color: inherit;
+}

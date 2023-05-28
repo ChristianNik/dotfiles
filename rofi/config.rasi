@@ -20,7 +20,6 @@ window {
   y-offset: -38px;
   background-color: @bg;
   border-color: @bg;
-  padding: 0 0 48px;
 }
 
 mainbox {
@@ -69,7 +68,7 @@ listview {
   scrollbar: false;
   fixed-columns: true;
   flow: horizontal;
-  padding: 16px;
+  padding: 16px 16px 48px;
 }
 
 box {
@@ -114,4 +113,9 @@ element selected.active {
 
 element alternate.normal {
   background-color: transparent;
+}
+
+error-message {
+  text-color: @text;
+  padding: 16px;
 }
