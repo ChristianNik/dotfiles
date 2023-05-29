@@ -17,7 +17,7 @@ window {
   location: south;
   anchor: south;
   width: 700px;
-  y-offset: -38px;
+  y-offset: -44px;
   background-color: @bg;
   border-color: @bg;
 }
