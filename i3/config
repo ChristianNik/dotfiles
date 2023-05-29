@@ -184,16 +184,10 @@ bindsym $mod+mod1+Up resize shrink height 10 px or 10 ppt
 bindsym $mod+mod1+Right resize grow width 10 px or 10 ppt
 
 
-mode "resize" {
-        bindsym Left  resize shrink width  10 px or 10 ppt
-        bindsym Down  resize grow   height 10 px or 10 ppt
-        bindsym Up    resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow   width  10 px or 10 ppt
-
-        bindsym Shift+Left  resize shrink width  100 px or 100 ppt
-        bindsym Shift+Down  resize grow   height 100 px or 100 ppt
-        bindsym Shift+Up    resize shrink height 100 px or 100 ppt
-        bindsym Shift+Right resize grow   width  100 px or 100 ppt
+set $debugDunst "dunst 1=normal 2=critical"
+mode $debugDunst {
+        bindsym 1 exec --no-startup-id "killall dunst && notify-send 'Test Message' 'Body text'"
+        bindsym 2 exec --no-startup-id "killall dunst && notify-send -u critical 'Test Message' 'Body text'"
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -201,7 +195,17 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+set $debugMode "debug [$mod] + d=dunst"
+mode $debugMode {
+        bindsym d mode $debugDunst
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+shift+d mode $debugMode
 
 
 # Create Log out, Reboot, Poweroff bindingsR
