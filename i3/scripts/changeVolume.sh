@@ -16,7 +16,7 @@ if [[ $volume == 0 || "$mute" == "off" ]]; then
 else
     # Show the volume notification
     dunstify -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
-    -h int:value:"$volume" "Volume: ${volume}%"
+    -h int:value:"$volume" "  ${volume}%"
 fi
 
 # Play the volume changed sound

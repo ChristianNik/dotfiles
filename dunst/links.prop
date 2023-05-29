@@ -1,0 +1,3 @@
+$DOTFILES/dunst/dunstrc=$HOME/.config/dunst/dunstrc
+$DOTFILES/dunst/assets/info.svg=$HOME/.dunst/info.svg
+$DOTFILES/dunst/assets/warning.svg=$HOME/.dunst/warning.svg
