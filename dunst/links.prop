@@ -1,3 +1,5 @@
 $DOTFILES/dunst/dunstrc=$HOME/.config/dunst/dunstrc
 $DOTFILES/dunst/assets/info.svg=$HOME/.dunst/info.svg
 $DOTFILES/dunst/assets/warning.svg=$HOME/.dunst/warning.svg
+$DOTFILES/dunst/scripts/play-normal.sh=$HOME/.dunst/play-normal.sh
+$DOTFILES/dunst/scripts/play-critical.sh=$HOME/.dunst/play-critical.sh
