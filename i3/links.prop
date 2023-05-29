@@ -1,4 +1,5 @@
 $DOTFILES/i3/config=$HOME/.config/i3/config
+$DOTFILES/i3/scripts/changeVolume.sh=$HOME/.i3/changeVolume.sh
 $DOTFILES/i3/polybar/config.ini=$HOME/.config/polybar/config.ini
 $DOTFILES/i3/polybar/colors.ini=$HOME/.config/polybar/colors.ini
 $DOTFILES/i3/polybar/glyphs.ini=$HOME/.config/polybar/glyphs.ini
