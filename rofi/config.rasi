@@ -27,7 +27,7 @@ mainbox {
 }
 
 inputbar {
-  margin: 16px 16px 0 16px;
+  margin: 32px 32px 16px ;
   padding: 8px;
   border-radius: 4px;
   text-color: @text;
@@ -47,7 +47,7 @@ prompt {
 textbox-prompt-colon {
   expand: false;
   str: "";
-  padding: 0 4px;
+  padding: 0 8px;
   vertical-align: 0.5;
   margin: 0 8px 0 0;
   font: "Hack Nerd Font 21px";
@@ -58,17 +58,18 @@ entry {
   cursor: text;
   text-color: @text;
   vertical-align: 0.5;
+  font: "Sans Regular 12px";
 }
 
 listview {
   width: 700px;
   columns: 6;
   spacing: 8px;
-  lines:  6;
+  lines: 4;
   scrollbar: false;
   fixed-columns: true;
   flow: horizontal;
-  padding: 16px 16px 48px;
+  padding: 16px 32px calc(8px * 24px);
   background-image: url("/home/christian/.rofi/launcher-bg.png");
 }
 
