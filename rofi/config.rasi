@@ -1,6 +1,6 @@
 configuration {
   modes: [combi];
-  combi-modes: [drun];
+  combi-modes: [drun, run];
   display-drun: "Anwendungen";
 }
 
