@@ -25,6 +25,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # FILE ALIASES ----------------------------------------------------------------------------------------------
 alias ls='exa --long --header'
+alias ..='cd ..'
 
 # I3 ALIASES ------------------------------------------------------------------------------------------------
 alias i3='code /home/christian/repos/dotfiles'
