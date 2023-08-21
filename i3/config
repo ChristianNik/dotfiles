@@ -58,6 +58,7 @@ bindsym $mod+Shift+q kill
 
 # program launcher
 bindsym $mod+d exec --no-startup-id rofi -show combi
+bindsym $mod+r exec --no-startup-id dmenu_run
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -294,4 +295,5 @@ for_window [title="gnome-calculator"] floating enable
 # scrcpy
 for_window [title="scrcpy"] floating enable
 
-
+# gnome-calculator
+for_window [class="Gnome-calculator"] floating enable
