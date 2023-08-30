@@ -1,3 +1,3 @@
 $DOTFILES/rofi/config.rasi=$HOME/.config/rofi/config.rasi
 $DOTFILES/rofi/reset.rasi=$HOME/.config/rofi/reset.rasi
-$DOTFILES/rofi/assets/launcher-bg.png=$HOME/.rofi/launcher-bg.png
+$DOTFILES/rofi/assets/background.svg=$HOME/.rofi/background.svg
