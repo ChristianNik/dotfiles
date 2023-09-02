@@ -261,7 +261,12 @@ bindsym $mod+e exec $FILE_BROWSER
 # KeePassXC
 assign [class="KeePassXC"] $ws10
 for_window [title="KeePassXC"] floating enable
-exec --no-startup-id keepassxc
+# exec --no-startup-id keepassxc
+
+# KeePassXC
+assign [class="Bitwarden"] $ws10
+for_window [title="Bitwarden"] floating enable
+exec --no-startup-id Bitwarden
 
 # VsCode
 assign [class="Code"] $ws2
