@@ -28,6 +28,7 @@
 | Chat       | ~~rambox~~ [ferdium](https://ferdium.org/download) |
 | Editor     | vscode                                             |
 | Browser    | firefox                                            |
+| PDF Editor | [PDFgear](https://www.pdfgear.com/)                |
 
 ### Folder structure
 
