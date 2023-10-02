@@ -18,6 +18,8 @@ font pango:monospace 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id lxpolkit
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -32,13 +34,14 @@ exec --no-startup-id nm-applet
 # Monitor Output
 exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal; xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
 
+# Bar
+exec --no-startup-id $HOME/.config/polybar/launch.sh
+
 # Restore Background
 exec_always --no-startup-id nitrogen --restore
 
 exec --no-startup-id picom
 
-# Bar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.i3/changeVolume.sh 2%+ unmute
