@@ -32,7 +32,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Monitor Output
-exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal; xrandr --output $MONITOR_RIGHT --pos 1920x-400 --rotate left
+exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal; xrandr --output $MONITOR_RIGHT --pos 1920x-270 --rotate left
 
 # Bar
 exec --no-startup-id $HOME/.config/polybar/launch.sh
