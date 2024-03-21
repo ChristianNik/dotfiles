@@ -246,8 +246,9 @@ workspace $ws6 output $MONITOR_RIGHT
 workspace $ws9 output $MONITOR_RIGHT
 
 
-
-
+# Select Workspace
+bindsym $mod+o exec "~/.i3/select_workspace.sh goto"
+bindsym $mod+Shift+o exec "~/.i3/select_workspace.sh move"
 
 
 smart_gaps on
