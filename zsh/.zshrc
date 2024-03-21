@@ -36,4 +36,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export AAX2MP3_AUTHCODE="e451e809"
+
 alias notifyme='curl -d "✅🖥️🖱️ Done" https://ntfy.app.chnikel.de/reminder'
+
+alias convertAudible='~/bin/aax2mp3 -i $1 -a e451e809'
+
+
+alias ll='ls -al'
