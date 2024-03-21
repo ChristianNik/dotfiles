@@ -118,3 +118,8 @@ Finally, test the fstab entry by issuing:
 sudo mount -a
 
 If there are no errors, you should test how it works after a reboot. Your remote share should mount automatically. 
+
+
+## Install
+
+Run `./install/bootstrap.sh`.
