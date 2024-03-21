@@ -283,7 +283,7 @@ exec --no-startup-id thunderbird
 # for_window [title="Shutter"] floating enable
 
 # Flameshot
-bindsym shift+Print exec flameshot gui
+bindsym Print exec flameshot gui
 
 # Ferdium
 assign [class="Ferdium"] $ws6
