@@ -32,7 +32,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Monitor Output
-exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal; xrandr --output $MONITOR_RIGHT --pos 1920x-270 --rotate left
+exec_always xrandr --output $MONITOR_LEFT --pos 0x0 --rotate normal; xrandr --output $MONITOR_RIGHT --pos 1920x-320 --rotate left
 
 # Bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -293,6 +293,8 @@ exec --no-startup-id exec ferdium
 # Steam
 assign [class="Steam"] $ws9
 # exec --no-startup-id exec steam 
+for_window[class="steam"] floating enable
+for_window[class="steam" title="^Steam$"] floating disable
 
 # gpick
 for_window [title="gpick"] floating enable
@@ -306,3 +308,5 @@ for_window [title="scrcpy"] floating enable
 
 # gnome-calculator
 for_window [class="Gnome-calculator"] floating enable
+
+
